@@ -1,8 +1,13 @@
-# adobe-app-builder-boilerplate
+# boilerplate-adobe-app-builder
 
 This is a project boilerplate for `aio` based apps for Adobe App Builder. You can use this repository
 as a base for building your apps. It's also intended to serve as a home for our `.devcontainer` configuration
 which can be launched on Github Codespaces as a developer sandbox, or as a local environment using vscode. 
+
+## Docker Hub
+
+The devcontainer for this project is published on Docker Hub.
+
 
 
 ## Working with Bitbucket
