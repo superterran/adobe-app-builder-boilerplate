@@ -1,0 +1,50 @@
+image: blueacornici/poc-app-builder-react-evergreen-demo:latest
+
+definitions:
+  deploy: 
+    - step: &BuildApp
+        caches:
+          - node
+        script:
+          - npm install
+          - npx aio app build
+    - step: &DeployMesh
+        caches:
+          - node
+        script: # unable to work out authentication without a browser and callback
+          - npx aio plugins:install @adobe/aio-cli-plugin-api-mesh
+          - make mesh-deploy
+          - npx aio api-mesh describe           
+    - step: &DeployApp
+        caches:
+          - node
+        script:
+          - npx aio app deploy
+pipelines:
+  default:
+      - step:
+          <<: *BuildApp
+          name: Build App
+  branches:
+    staging: 
+      - step:
+          <<: *BuildApp
+          name: Build App
+      # - step:
+      #     <<: *DeployMesh 
+      #     name: Deploy Mesh to Staging
+      - step: 
+          <<: *DeployApp
+          name: Deploy App to Staging
+          deployment: Staging
+          trigger: automatic   
+    main: 
+      - step:
+          <<: *BuildApp
+          name: Build App    
+      - step: 
+          <<: *DeployApp
+          name: Deploy App to Production
+          deployment: Production
+          trigger: automatic
+
