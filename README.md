@@ -6,9 +6,11 @@ which can be launched on Github Codespaces as a developer sandbox, or as a local
 
 ## Docker Hub
 
-The devcontainer for this project is published on Docker Hub.
+The devcontainer for this project is published on [Docker Hub](https://hub.docker.com/repository/docker/blueacornici/boilerplate-adobe-app-builder/general).
 
-
+```bash
+  docker pull blueacornici/boilerplate-adobe-app-builder:latest
+```
 
 ## Working with Bitbucket
 
@@ -39,3 +41,10 @@ the pipeline performs an `aio app build` for all branches, and a `aio app deploy
 | AIO_runtime_apihost            | Repo-wide   | e.g.`https://adobeioruntime.net`            |
 | AIO_runtime_auth               | Repo-wide   | auth value, [how to retrieve](https://developer.adobe.com/app-builder/docs/resources/ci-cd/lesson1/#github-secrets)   |
 | AIO_WORKSPACE                  | Environment | String of workspace name, i.e.` Stage`      |
+
+
+# References
+
+* [GitHub Repository](https://github.com/superterran/boilerplate-adobe-app-builder)
+* [Bitbucket Repository](https://bitbucket.org/blueacorn/boilerplate-adobe-app-builder/src/main/)
+* [Docker Hub Repository](https://hub.docker.com/repository/docker/blueacornici/boilerplate-adobe-app-builder/general)

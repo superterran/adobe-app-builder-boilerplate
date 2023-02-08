@@ -1,4 +1,4 @@
-image: blueacornici/poc-app-builder-react-evergreen-demo:latest
+image: blueacornici/boilerplate-adobe-app-builder:latest
 
 definitions:
   deploy: 
