@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@adobe/aio-cli": "^9.1.1"
+  }
+}

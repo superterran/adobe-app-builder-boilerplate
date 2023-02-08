@@ -1,0 +1,31 @@
+{
+	"name": "Adobe App Builder Project",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"shutdownAction": "stopCompose",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {		  
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"mrmlnc.vscode-apache"
+			]
+		}
+	},
+
+	"containerEnv": {
+		"AUTO_WORKSPACE_FOLDER": "/workspaces/${localWorkspaceFolderBasename}"
+	},
+
+	"forwardPorts": [8080],
+
+	"postCreateCommand": ".devcontainer/postCreate.sh",
+	"postStartCommand": "npx aio app run"
+
+}
